@@ -1,0 +1,152 @@
+<?xml version=”1.0” encoding=”UTF-8”?>
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.1//EN” “http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd”>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+  <head>
+    <title>Positioning Elements with JavaScript</title>
+    <script type="text/javascript" src="/Users/Suyogya/Desktop/htdocs/position.js"></script>
+    <script type="text/javascript">
+    
+    function ChangeTitle(){
+    if (!document.getElementById) return;
+    var newtitle = document.form2.newtitle.value;
+    var head1 = document.getElementById ("head1");
+    head1.firstChild.nodeValue = newtitle;
+    }
+
+    function AddText(){
+    if (!document.getElementById) return;
+    var sentence = document.form3.sentence.value;
+    var node = document.createTextNode (" " + sentence);
+    document.getElementById("p1").appendChild(node);
+    document.form3.sentence.value = "";
+    }
+
+    </script>
+    
+    <style text="text/css">
+      #buttons {
+        text-align: center;
+      }
+
+      #square {
+        position: absolute;
+        top: 250px;
+        left: 200px;
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+        padding: 20px;
+        background-color: #e0e0e0;
+      }
+      a{
+  text-decoration: none;
+  font-weight: bold;
+  color: #7a7abf;
+}
+
+#hide_e{
+  display: none; /* display defines the display property of the class. property 'none' completely removes the element. */
+}
+
+#elevation{
+  display: none;
+}
+
+#hide_p{
+  display: none;
+}
+
+#photos {
+  display: none;
+}
+
+#show_e{
+  display: block; /* displays an element as a block element (like <p>). It starts on the new line and takes up the whole width */
+}
+
+#show_p{
+  display: block;
+}
+
+.fakelink {
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  color: #E03A3E;
+}
+</style>
+  </head>
+<body>
+    <!-- Hiding the Square
+
+    
+   <form action="" name="form1">
+   <div id="buttons">
+   <input type="button" name="left" value="Left"
+onclick="pos(-1,0);" />
+<input type="button" name="right" value="Right"
+     onclick="pos(1,0);" />
+   <input type="button" name="up" value="Up"
+onclick="pos(0,-1);" />
+<input type="button" name="down" value="Down"
+     onclick="pos(0,1);" />
+   <input type="button" name="hide" value="Hide"
+     onclick="hideSquare();" />
+   <input type="button" name="show" value="Show"
+     onclick="showSquare();" />
+   </div>
+</form>
+<hr />
+<div id="square">
+<p>This square is an absolutely positioned
+layer that you can move using the buttons above. Please use the show hide button as that makes it easier to view other functions in this page.</p> 
+</div>
+-->
+<h1 id ="head1">Dynamic JavaScript Title</h1>
+</br>
+<p> Using the W3C DOM, you can dynamically change the
+heading at the top of this page. Enter a new title and
+click the Change! button. </p>
+
+
+<form action ="" name = "form2">
+    <div>
+        <input type = "text" name ="newtitle" size = "40"/>
+        <input type = "button" value = "Change!" onclick = "ChangeTitle();"/>
+    </div>
+</form>
+
+<h1 id = "head2"> Create your own content </h1>
+<p id = "p1"> Using W3C DOM, you can dynamically add sentences to this paragraph. Type a sentence and click the Add! button. </p>
+
+<form action = "" name ="form3">
+    <div>
+        <input type = "text" name ="sentence" size = "65" />
+        <input type = "button" value = "Add!" onclick ="AddText();"/>
+
+        <!-- AddText() function first assigns sentence variable to the text typed in the field. Next, a new text node is created that contains the sentence and appends the new text node to the paragraph. -->
+    </div>
+</form>
+
+</br>
+</br>
+
+<h1>
+<!--
+Using java script event handlers!
+</h1>
+<a href ="http://en.wikipedia.org/wiki/Palouse">Palouse <span>Learn about Palhouse</span></a>
+
+<div class ="fakelink"
+  id ="show_e"
+  onclick = "this.style.display" = 'none';
+  document.getElementById ('hide_e').style.display = 'block';
+  document.getElementById ('elevation').style.display = 'inline';
+ ">
+ &raquo; Show elevation <!-- &raquo; creates '>>' arrows and &laquo; creates '<<' -->
+ </div>
+ 
+
+</body>
+</html>
